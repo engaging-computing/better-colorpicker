@@ -1,6 +1,15 @@
 @charset "UTF-8";
 
-.colorpicker {
+.disable-text-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#colorpicker {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -17,7 +26,6 @@
 	cursor: default;
 
 	border: thin solid #ABABAB;
-	border-radius: 3px;
 	padding: 3px;
 	background-color: #FFF;
 
@@ -26,37 +34,29 @@
 	z-index: 1;
 }
 
-.colorpicker-hidden .colorpicker{
-	visibility: hidden;
-}
-
-.colorpicker-visible .colorpicker {
-	visibility: visible;
-}
-
-.colorpicker .sv-picker, .colorpicker .h-picker, .colorpicker .preview, .colorpicker .mbutton {
+#colorpicker > .sv-picker, #colorpicker > .h-picker, #colorpicker > .preview, #colorpicker > .mbutton {
 	float: left;
 	position: relative;
 	overflow: none;
 	z-index: 1;
 }
 
-.colorpicker .sv-picker, .colorpicker .h-picker {
+#colorpicker > .sv-picker, #colorpicker > .h-picker {
 	cursor: crosshair;
 }
 
-.colorpicker .sv-picker {
+#colorpicker > .sv-picker {
 	width: 110px;
 	height: 110px;
 }
 
-.colorpicker .h-picker {
+#colorpicker > .h-picker {
 	width: 20px;
 	height: 110px;
 	margin-left: 3px;
 }
 
-.colorpicker .preview {
+#colorpicker > .preview {
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -68,43 +68,26 @@
 	float: left;
 }
 
-/* colorpicker background color layers */
+/*#colorpicker gradient overlay layers */
 
-.colorpicker .background {
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	z-index: 2;
-}
-
-.colorpicker .sv-picker .background {
-	background-color: #F00;
-}
-
-.colorpicker .preview .background {
-	background-color: #F00;
-}
-
-/* colorpicker gradient overlay layers */
-
-.colorpicker .gradient {
+#colorpicker .gradient {
 	position: absolute;
 	width: inherit;
 	height: inherit;
 	z-index: 3;
 }
 
-.colorpicker .sv-picker .gradient {
+#colorpicker > .sv-picker > .gradient {
 	background-image: url(<%= image_path('sv-picker.png')%>);
 }
 
-.colorpicker .h-picker .gradient {
+#colorpicker > .h-picker > .gradient {
 	background-image: url(<%= image_path('h-picker.png')%>);
 }
 
-/* colorpicker horizontal and vertical underlines */
+/*#colorpicker horizontal and vertical underlines */
 
-.colorpicker .h.sline {
+#colorpicker .h.sline {
 	position: absolute;
 	margin-top: -1px;
 	background-color: rgba(0, 0, 0, 0.25);
@@ -113,7 +96,7 @@
 	z-index: 4;
 }
 
-.colorpicker .v.sline {
+#colorpicker .v.sline {
 	position: absolute;
 	margin-left: -1px;
 	background-color: rgba(0, 0, 0, 0.25);
@@ -122,9 +105,9 @@
 	z-index: 4;
 }
 
-/* colorpicker horizontal and verical lines */
+/*#colorpicker horizontal and verical lines */
 
-.colorpicker .h.line {
+#colorpicker .h.line {
 	position: absolute;
 	background-color: #FFF;
 	height: 1px;
@@ -132,7 +115,7 @@
 	z-index: 5;
 }
 
-.colorpicker .v.line {
+#colorpicker .v.line {
 	position: absolute;
 	background-color: #FFF;
 	width: 1px;
@@ -142,7 +125,7 @@
 
 /* buttons for saving and closing */
 
-.colorpicker .mbutton {
+#colorpicker > .mbutton {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -155,18 +138,18 @@
 	padding: 4px 0;
 }
 
-.colorpicker .mbutton.msubmit {
+#colorpicker > .mbutton.msubmit {
 	width: 67px;
 	border-left: 1px solid #ABABAB;
 	border-radius: 3px 0 0 3px;
 }
 
-.colorpicker .mbutton.mcancel {
+#colorpicker > .mbutton.mcancel {
 	width: 66px;
 	border-radius: 0 3px 3px 0;
 }
 
-.colorpicker .mbutton:hover {
+#colorpicker > .mbutton:hover {
 	background-color: #ABABAB;
 	color: #FFF;
 }
