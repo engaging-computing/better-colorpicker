@@ -263,10 +263,12 @@ class ColorPickerRef
 
       x = @args.hPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight();
       y = @args.vPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight();
+      z = @args.zPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight();
 
       @elem.jqObj.css
         left: x
         top: y
+        z-index: z
     else
       @close()
 
