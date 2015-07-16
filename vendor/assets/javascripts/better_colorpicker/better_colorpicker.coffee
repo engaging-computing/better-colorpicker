@@ -95,6 +95,7 @@ class ColorPicker
     tempColor = @inputColor color
     if tempColor.isValid()
       @color = tempColor.toHsv()
+      @color.h /= 360
     else
       @color = {h: 0, s: 1, v: 1}
     
