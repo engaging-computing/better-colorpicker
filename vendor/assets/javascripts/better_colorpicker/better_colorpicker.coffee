@@ -52,6 +52,7 @@ $.fn.extend
         100
       vPosition: (w, h) ->
         100
+      zPosition: 1
       anchor: $('body')
       autoClose: true
       outputType: 'rgb'
@@ -262,12 +263,13 @@ class ColorPickerRef
     unless @isOpen
       @elem.openMenu 0, 0, @args.onOpen(), @args.anchor, @args.autoClose, @args
 
-      x = @args.hPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight();
-      y = @args.vPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight();
+      x = @args.hPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight()
+      y = @args.vPosition @elem.jqObj.outerWidth(), @elem.jqObj.outerHeight()
 
       @elem.jqObj.css
         left: x
         top: y
+        zIndex: @args.zPosition
     else
       @close()
 
