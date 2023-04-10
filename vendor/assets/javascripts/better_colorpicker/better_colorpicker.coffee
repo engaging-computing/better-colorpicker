@@ -114,7 +114,7 @@ class ColorPicker
     $(document).on 'mousemove.better_colorpicker', @dragChange
     $(document).on 'mouseup.better_colorpicker', (e) =>
       distPicker = $(e.target).closest('#colorpicker').length
-      distButton = $(e.target).closest(args.this).length
+      distButton = $(e.target).closest(@args.this).length
       if @dragMode == EDIT_HUE or @dragMode == EDIT_SATVAL
         @dragEnd e
       else if autoClose and distPicker == 0 and distButton == 0
